@@ -12,8 +12,10 @@ public class UserService implements UserServiceI{
 
     List<User> list = new ArrayList<>();
     public List<User> getAllUsers(){
-        list.add(new User(UUID.randomUUID().toString(),"Pankaj" , "pankaj@gmail.com"));
-        list.add(new User(UUID.randomUUID().toString(),"Garg" , "garg@gmail.com"));
+        if(list.isEmpty()){
+            list.add(new User(UUID.randomUUID().toString(),"Pankaj" , "pankaj@gmail.com"));
+            list.add(new User(UUID.randomUUID().toString(),"Garg" , "garg@gmail.com"));
+        }
         return this.list;
     }
 }
