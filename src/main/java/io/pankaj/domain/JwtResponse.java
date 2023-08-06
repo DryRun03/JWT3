@@ -1,8 +1,11 @@
 package io.pankaj.domain;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
+@Builder @ToString
 public class JwtResponse {
-    private String token;
+    private String jwtToken;
+    private String userName;
 }
