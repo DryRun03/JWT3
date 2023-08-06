@@ -26,7 +26,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         RequestMatcher publicUrls = new OrRequestMatcher(
-                new AntPathRequestMatcher("/home/**"),
+//                new AntPathRequestMatcher("/home/**"),
                 new AntPathRequestMatcher("/auth/login")
         );
         return http
