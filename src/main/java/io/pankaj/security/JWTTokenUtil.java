@@ -1,4 +1,4 @@
-package io.pankaj.config;
+package io.pankaj.security;
 
 
 import io.jsonwebtoken.Claims;
@@ -16,7 +16,7 @@ import java.util.function.Function;
 
 public class JWTTokenUtil {
 
-    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
+    public static final long JWT_TOKEN_VALIDITY = 8 * 60 * 60;
 
     @Value("${jwt.secret}")
     private String secret;
