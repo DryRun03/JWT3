@@ -1,7 +1,7 @@
 package io.pankaj.controller;
 
-import io.pankaj.domain.User;
-import io.pankaj.service.UserService;
+import io.pankaj.entities.User;
+import io.pankaj.service.UserServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired @Lazy
-    private UserService userService;
+    private UserServiceI userService;
 
 
     @GetMapping("/user")

@@ -13,16 +13,16 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 public class WebConfig {
 
-    @Bean
-    public UserDetailsService userDetailsService(){
-        UserDetails user1 = User.builder().username("pankaj")
-                .password(bCryptPasswordEncoder().encode("pankaj"))
-                .roles("ADMIN").build();
-        UserDetails user2 = User.builder().username("garg")
-                .password(bCryptPasswordEncoder().encode("garg"))
-                .roles("USER").build();
-        return new InMemoryUserDetailsManager(user1,user2);
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//        UserDetails user1 = User.builder().username("pankaj")
+//                .password(bCryptPasswordEncoder().encode("pankaj"))
+//                .roles("ADMIN").build();
+//        UserDetails user2 = User.builder().username("garg")
+//                .password(bCryptPasswordEncoder().encode("garg"))
+//                .roles("USER").build();
+//        return new InMemoryUserDetailsManager(user1,user2);
+//    }
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();

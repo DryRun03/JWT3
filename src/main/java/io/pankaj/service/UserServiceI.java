@@ -1,11 +1,16 @@
 package io.pankaj.service;
 
-import io.pankaj.domain.User;
+import io.pankaj.entities.User;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public interface UserServiceI {
-    public List<User> getAllUsers();
+public class UserServiceI implements UserService {
+
+    List<User> list = new ArrayList<>();
+    public List<User> getAllUsers(){
+        return this.list;
+    }
 }
