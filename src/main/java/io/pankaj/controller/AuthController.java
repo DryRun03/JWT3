@@ -2,7 +2,9 @@ package io.pankaj.controller;
 
 import io.pankaj.domain.JwtRequest;
 import io.pankaj.domain.JwtResponse;
+import io.pankaj.entities.User;
 import io.pankaj.security.JWTTokenUtil;
+import io.pankaj.service.UserServiceI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,9 @@ public class AuthController {
     @Autowired @Lazy
     private AuthenticationManager  manager;
 
+    @Autowired
+    UserServiceI userService;
+
     @Autowired @Lazy
     private UserDetailsService userDetailsService;
     private Logger logger = LoggerFactory.getLogger(AuthController.class);
@@ -50,7 +55,11 @@ public class AuthController {
             manager.authenticate(authentication);
         }catch(BadCredentialsException ex){
             throw new RuntimeException("Invalid UserName or Password!!");
-
         }
+    }
+
+    @PostMapping("/createUser")
+    public User createUser(@RequestBody User user){
+        return userService.createUser(user);
     }
 }
